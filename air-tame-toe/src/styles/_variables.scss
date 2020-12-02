@@ -1,0 +1,37 @@
+$primary-color: #31312F;
+$secondary-color: whitesmoke;
+$accent-color: #DEAD4A;
+
+$font: Moon, Helvetica, sans-serif;
+$font-size: calc(3rem + 6vw);
+
+// Min is solution to override Sass's min function and use native CSS min(css, unlike Sass, is not case sensitive)
+$square-size: Min(25vh, 25vw);
+
+$board-gap: 1rem;
+
+@mixin super-center() {
+  display: grid;
+  place-items: center;
+}
+
+@mixin button() {
+  font-size: calc(2vw + 1rem);
+  padding: 2vw;
+  cursor: pointer;
+}
+
+@mixin board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: $board-gap;
+  grid-row-gap: $board-gap;
+}
+
+@mixin overlay() {
+  @include super-center();
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
